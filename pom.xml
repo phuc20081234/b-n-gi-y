@@ -8,6 +8,18 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>17</maven.compiler.release>
-        <exec.mainClass>fptedu.bangiay.BanGiay</exec.mainClass>
     </properties>
+     <dependencies>
+ <dependency>
+ <groupId>com.microsoft.sqlserver</groupId>
+ <artifactId>mssql-jdbc</artifactId>
+ <version>12.8.1.jre8</version>
+ </dependency>
+ <dependency>
+ <groupId>org.projectlombok</groupId>
+ <artifactId>lombok</artifactId>
+ <version>1.18.34</version>
+ <scope>provided</scope>
+ </dependency>
+</dependencies>
 </project>
