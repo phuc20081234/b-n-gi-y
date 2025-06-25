@@ -19,6 +19,7 @@ public class DangNhapFrame extends javax.swing.JFrame {
      */
     public DangNhapFrame() {
         initComponents();
+         setLocationRelativeTo(null);
     }
 
     /**
@@ -85,20 +86,18 @@ public class DangNhapFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangNhapActionPerformed
-        String email = txtEmail.getText();
+   String email = txtEmail.getText();
     String matKhau = new String(txtMatKhau.getPassword());
 
-    NguoiDungDAO dao = new NguoiDungDAO();
-    NguoiDung nd = (NguoiDung) dao.dangNhap(email, matKhau);
+    NguoiDung nd = new NguoiDungDAO().dangNhap(email, matKhau);
 
     if (nd != null) {
         JOptionPane.showMessageDialog(this, "Đăng nhập thành công!");
-        new GiaoDienChinhFrame(nd).setVisible(true);
-        this.dispose();
+        new GiaoDienChinhFrame(nd).setVisible(true); // 👉 truyền người dùng
+        this.dispose(); // đóng form đăng nhập
     } else {
         JOptionPane.showMessageDialog(this, "Sai thông tin đăng nhập!");
     }
-
     }//GEN-LAST:event_btnDangNhapActionPerformed
 
     /**

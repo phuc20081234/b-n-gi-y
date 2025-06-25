@@ -36,10 +36,12 @@ public class GiaoDienChinhFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         lblChao = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         mnuHeThong = new javax.swing.JMenuBar();
-        greg = new javax.swing.JMenu();
         mnuDoiMatKhau = new javax.swing.JMenu();
-        mnuDangXuat = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        mnuBanHang = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
@@ -50,20 +52,25 @@ public class GiaoDienChinhFrame extends javax.swing.JFrame {
         lblChao.setForeground(new java.awt.Color(255, 51, 51));
         lblChao.setText("Xin chào:");
 
-        greg.setText("Hệ thống");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/france fashion GIF by CRPTC CHILD - Find & Share on GIPHY.gif"))); // NOI18N
 
-        mnuDoiMatKhau.setText("Đổi mật khẩu");
-        mnuDoiMatKhau.addActionListener(new java.awt.event.ActionListener() {
+        mnuDoiMatKhau.setText("Hệ thống");
+
+        jMenuItem1.setText("Đổi mật khẩu");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mnuDoiMatKhauActionPerformed(evt);
+                jMenuItem1ActionPerformed(evt);
             }
         });
-        greg.add(mnuDoiMatKhau);
+        mnuDoiMatKhau.add(jMenuItem1);
 
-        mnuDangXuat.setText("Đăng xuất");
-        greg.add(mnuDangXuat);
+        mnuHeThong.add(mnuDoiMatKhau);
 
-        mnuHeThong.add(greg);
+        mnuBanHang.setText("Bán hàng");
+        mnuHeThong.add(mnuBanHang);
+
+        jMenu3.setText("Thống kê");
+        mnuHeThong.add(jMenu3);
 
         jMenu2.setText("Quản lý");
 
@@ -82,24 +89,30 @@ public class GiaoDienChinhFrame extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(lblChao, javax.swing.GroupLayout.DEFAULT_SIZE, 471, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(lblChao, javax.swing.GroupLayout.DEFAULT_SIZE, 556, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(92, 92, 92)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(lblChao, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(210, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void mnuDoiMatKhauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuDoiMatKhauActionPerformed
-       
-    }//GEN-LAST:event_mnuDoiMatKhauActionPerformed
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+          new DoiMatKhauFrame(nd).setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -137,12 +150,14 @@ public class GiaoDienChinhFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu greg;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JLabel lblChao;
-    private javax.swing.JMenu mnuDangXuat;
+    private javax.swing.JMenu mnuBanHang;
     private javax.swing.JMenu mnuDoiMatKhau;
     private javax.swing.JMenuBar mnuHeThong;
     // End of variables declaration//GEN-END:variables

@@ -33,5 +33,31 @@ public class NguoiDungDAO {
             e.printStackTrace();
         }
         return null;
-    } 
+    }
+    public boolean kiemTraMatKhauCu(String email, String matKhauCu) {
+    String sql = "SELECT * FROM NguoiDung WHERE Email = ? AND MatKhau = ?";
+    try (Connection conn = DatabaseHelper.getConnection();
+         PreparedStatement ps = conn.prepareStatement(sql)) {
+        ps.setString(1, email);
+        ps.setString(2, matKhauCu);
+        ResultSet rs = ps.executeQuery();
+        return rs.next(); // nếu tìm thấy => đúng mật khẩu
+    } catch (Exception e) {
+        e.printStackTrace();
+        return false;
+    }
+
+}
+    public boolean doiMatKhau(String email, String matKhauMoi) {
+    String sql = "UPDATE NguoiDung SET MatKhau = ? WHERE Email = ?";
+    try (Connection conn = DatabaseHelper.getConnection();
+         PreparedStatement ps = conn.prepareStatement(sql)) {
+        ps.setString(1, matKhauMoi);
+        ps.setString(2, email);
+        return ps.executeUpdate() > 0;
+    } catch (Exception e) {
+        e.printStackTrace();
+        return false;
+    }
+}
 }
